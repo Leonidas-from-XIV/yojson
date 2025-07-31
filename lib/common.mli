@@ -29,7 +29,7 @@ end
 
 val init_lexer :
   ?buf:Buffer.t -> ?fname:string -> ?lnum:int -> unit -> lexer_state
-(** Create a fresh lexer_state record. *)
+(** Create a fresh {!lexer_state} record. *)
 
 (**/**)
 (* begin undocumented section *)

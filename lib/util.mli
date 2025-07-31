@@ -85,7 +85,7 @@ val combine : t -> t -> t
 val member : string -> t -> t
 (** [member k obj] returns the value associated with the key [k] in the JSON
       object [obj], or [`Null] if [k] is not present in [obj]. To distinguish
-      between a key that doesn't exist and [`Null] use the [path] function.
+      between a key that doesn't exist and [`Null] use {!path}.
       @raise Type_error if [obj] is not a JSON object. *)
 
 val path : string list -> t -> t option

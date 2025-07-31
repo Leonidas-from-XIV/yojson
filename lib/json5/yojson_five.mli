@@ -73,8 +73,12 @@ module Safe : sig
   (** Pretty-printer for values of type {!t}. *)
 
   val equal : t -> t -> bool
-  (** [equal a b] is [true] when the parsed representation is identical.
-      Order of keys matters, so does the number representation. *)
+  (** [equal a b] is the monomorphic equality.
+        Determines whether two JSON values are considered equal. In the case of
+        JSON objects, the order of the keys does not matter, except for
+        duplicate keys which will be considered equal as long as they are in the
+        same input order.
+      *)
 end
 
 module Basic : sig
@@ -144,6 +148,10 @@ module Basic : sig
   (** Pretty-printer for values of type {!t}. *)
 
   val equal : t -> t -> bool
-  (** [equal a b] is [true] when the parsed representation is identical.
-      Order of keys matters, so does the number representation. *)
+  (** [equal a b] is the monomorphic equality.
+        Determines whether two JSON values are considered equal. In the case of
+        JSON objects, the order of the keys does not matter, except for
+        duplicate keys which will be considered equal as long as they are in the
+        same input order.
+      *)
 end
