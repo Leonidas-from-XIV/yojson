@@ -9,7 +9,7 @@ This library parses JSON data into a nested OCaml tree data structure.
 Library documentation
 ---------------------
 
-Currently at https://ocaml-community.github.io/yojson/
+Currently at https://ocaml.org/p/yojson/latest/doc/index.html
 
 
 Examples
@@ -30,7 +30,7 @@ let json = Yojson.Safe.from_string json_string
 let () = Format.printf "Parsed to %a" Yojson.Safe.pp json
 ```
 
-The `examples` directory contains more.
+The `examples` directory contains more examples.
 
 Related tooling
 ---------------
