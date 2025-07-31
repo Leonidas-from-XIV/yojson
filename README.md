@@ -1,15 +1,19 @@
-Yojson: JSON library for OCaml
-==============================
+Yojson: JSON libraries for OCaml
+================================
 
 [![Build Status](https://img.shields.io/endpoint?url=https%3A%2F%2Focaml.ci.dev%2Fbadge%2Focaml-community%2Fyojson%2Fmaster&logo=ocaml)](https://ocaml.ci.dev/github/ocaml-community/yojson)
 
-This library parses JSON data into a nested OCaml tree data structure.
+The Yojson libraries parse JSON and JSON5 data into a nested OCaml tree data
+structures.
 
 
 Library documentation
 ---------------------
 
-Currently at https://ocaml.org/p/yojson/latest/doc/index.html
+The documentation of both
+[Yojson](https://ocaml.org/p/yojson/latest/doc/index.html) and
+[Yojson-five](https://ocaml.org/p/yojson-five/latest/doc/index.html) can be
+found on [OCaml.org](https://ocaml.org).
 
 
 Examples
