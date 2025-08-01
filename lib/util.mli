@@ -77,17 +77,20 @@ val values : t -> t list
       @raise Type_error if argument is not a JSON object. *)
 
 val combine : t -> t -> t
-(** Combine two JSON objects together.
+(** [combine a b] Will join two JSON objects together, the resulting object
+      contains the keys of [a] and then the keys of [b]. Duplication of keys
+      can occur.
       @raise Invalid_argument if either argument is not a JSON object. *)
 
 val member : string -> t -> t
 (** [member k obj] returns the value associated with the key [k] in the JSON
-      object [obj], or [`Null] if [k] is not present in [obj].
+      object [obj], or [`Null] if [k] is not present in [obj]. To distinguish
+      between a key that doesn't exist and [`Null] use {!path}.
       @raise Type_error if [obj] is not a JSON object. *)
 
 val path : string list -> t -> t option
-(* [path l obj] recurses the JSON object [obj] for each key in the path
-   [l] until the path is empty or there is no such key in the chain. *)
+(** [path l obj] recurses the JSON object [obj] for each key in the path
+    [l] until the path is empty or there is no such key in the chain. *)
 
 val index : int -> t -> t
 (** [index i arr] returns the value at index [i] in the JSON array [arr].
@@ -119,12 +122,12 @@ val to_bool_option : t -> bool option
       @raise Type_error if argument is neither. *)
 
 val to_number : t -> float
-(** Extract a number.
+(** Extract a number. This works on both integers and floats.
       @raise Type_error if argument is not a JSON number. *)
 
 val to_number_option : t -> float option
 (** Extract [Some] number,
-      return [None] if the value is null.
+      return [None] if the value is [`Null].
       @raise Type_error if argument is neither. *)
 
 val to_float : t -> float

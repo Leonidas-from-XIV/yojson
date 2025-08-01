@@ -29,7 +29,7 @@ val to_channel :
   (** Write a compact JSON value to a channel.
       Note: the [out_channel] is not flushed by this function.
 
-      See [to_string] for the role of the optional arguments and raised exceptions. *)
+      See {!to_string} for the role of the optional arguments and raised exceptions. *)
 
 val to_output :
   ?buf:Buffer.t ->
@@ -39,7 +39,7 @@ val to_output :
   < output : string -> int -> int -> int; .. > -> t -> unit
   (** Write a compact JSON value to an OO channel.
 
-      See [to_string] for the role of the optional arguments and raised exceptions. *)
+      See {!to_string} for the role of the optional arguments and raised exceptions. *)
 
 val to_file :
   ?len:int ->
@@ -47,7 +47,7 @@ val to_file :
   ?suf:string ->
   string -> t -> unit
   (** Write a compact JSON value to a file.
-      See [to_string] for the role of the optional arguments and raised exceptions.
+      See {!to_string} for the role of the optional arguments and raised exceptions.
       @param suf is a suffix appended to the output Newline by default
       for POSIX compliance. *)
 
@@ -56,7 +56,7 @@ val to_buffer :
   ?std:bool ->
   Buffer.t -> t -> unit
   (** Write a compact JSON value to an existing buffer.
-      See [to_string] for the role of the optional argument and raised exceptions. *)
+      See {!to_string} for the role of the optional argument and raised exceptions. *)
 
 val seq_to_string :
   ?buf:Buffer.t ->
@@ -67,7 +67,7 @@ val seq_to_string :
   (** Write a sequence of [suf]-suffixed compact one-line JSON values to
       a string.
       @param suf is the suffix ouf each value written. Newline by default.
-      See [to_string] for the role of the optional arguments and raised exceptions. *)
+      See {!to_string} for the role of the optional arguments and raised exceptions. *)
 
 val seq_to_channel :
   ?buf:Buffer.t ->
@@ -78,7 +78,7 @@ val seq_to_channel :
   (** Write a sequence of [suf]-suffixed compact one-line JSON values to
       a channel.
       @param suf is the suffix of each value written. Newline by default.
-      See [to_channel] for the role of the optional arguments and raised exceptions. *)
+      See {!to_channel} for the role of the optional arguments and raised exceptions. *)
 
 val seq_to_file :
   ?len:int ->
@@ -88,7 +88,7 @@ val seq_to_file :
   (** Write a sequence of [suf]-suffixed compact one-line JSON values to
       a file.
       @param suf is the suffix of each value written. Newline by default.
-      See [to_string] for the role of the optional arguments and raised exceptions. *)
+      See {!to_string} for the role of the optional arguments and raised exceptions. *)
 
 val seq_to_buffer :
   ?suf:string ->
@@ -98,7 +98,7 @@ val seq_to_buffer :
   (** Write a sequence of [suf]-suffixed compact one-line JSON values to
       an existing buffer.
       @param suf is the suffix of each value written. Newline by default.
-      See [to_string] for the role of the optional arguments and raised exceptions. *)
+      See {!to_string} for the role of the optional arguments and raised exceptions. *)
 
 val write_t : Buffer.t -> t -> unit
 (** Write the given JSON value to the given buffer.
