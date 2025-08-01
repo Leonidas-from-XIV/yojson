@@ -6,7 +6,6 @@
    The main advantage of this module is its simplicity.
 *)
 
-#define INT
 #define FLOAT
 #define STRING
 
@@ -25,6 +24,5 @@ module Util : sig
   #include "util.mli"
 end
 
-#undef INT
 #undef FLOAT
 #undef STRING

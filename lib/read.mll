@@ -98,10 +98,8 @@
       !n
 
   let make_positive_int v lexbuf =
-    #ifdef INT
       try `Int (extract_positive_int lexbuf)
       with Int_overflow ->
-    #endif
       #ifdef INTLIT
         `Intlit (Lexing.lexeme lexbuf)
       #else
@@ -125,10 +123,8 @@
       !n
 
   let make_negative_int v lexbuf =
-    #ifdef INT
       try `Int (extract_negative_int lexbuf)
       with Int_overflow ->
-    #endif
       #ifdef INTLIT
         `Intlit (Lexing.lexeme lexbuf)
       #else

@@ -1,4 +1,3 @@
-#define INT
 #define INTLIT
 #define FLOAT
 #define STRING
@@ -23,7 +22,6 @@ module Util = struct
   #include "util.ml"
 end
 
-#undef INT
 #undef INTLIT
 #undef FLOAT
 #undef STRING

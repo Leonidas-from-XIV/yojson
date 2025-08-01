@@ -1,4 +1,3 @@
-#define INT
 #define INTLIT
 #define FLOAT
 #define STRING
@@ -15,7 +14,6 @@ end
 
 #include "write2.ml"
 
-#undef INT
 #undef INTLIT
 #undef FLOAT
 #undef STRING

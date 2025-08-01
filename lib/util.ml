@@ -4,9 +4,7 @@ let typeof = function
   | `Assoc _ -> "object"
   | `Bool _ -> "bool"
   | `Float _ -> "float"
-#ifdef INT
   | `Int _ -> "int"
-#endif
   | `List _ -> "array"
   | `Null -> "null"
   | `String _ -> "string"
@@ -60,18 +58,14 @@ let to_bool_option = function
   | js -> typerr "Expected bool or null, got " js
 
 let to_number = function
-#ifdef INT
   | `Int i -> float i
-#endif
 #ifdef FLOAT
   | `Float f -> f
 #endif
   | js -> typerr "Expected number, got " js
 
 let to_number_option = function
-#ifdef INT
   | `Int i -> Some (float i)
-#endif
 #ifdef FLOAT
   | `Float f -> Some f
 #endif
@@ -92,15 +86,11 @@ let to_float_option = function
   | js -> typerr "Expected float or null, got " js
 
 let to_int = function
-#ifdef INT
   | `Int i -> i
-#endif
   | js -> typerr "Expected int, got " js
 
 let to_int_option = function
-#ifdef INT
   | `Int i -> Some i
-#endif
   | `Null -> None
   | js -> typerr "Expected int or null, got " js
 
@@ -160,13 +150,9 @@ let filter_member k l =
 let filter_assoc l = filter_map (function `Assoc l -> Some l | _ -> None) l
 let filter_bool l = filter_map (function `Bool x -> Some x | _ -> None) l
 let filter_int l =
-  filter_map (
-      function
-        #ifdef INT
-      |  `Int x -> Some x
-                     #endif
-      | _ -> None
-    ) l
+  filter_map (function
+    | `Int x -> Some x
+    | _ -> None) l
 
 let filter_float l =
   filter_map (
@@ -180,9 +166,7 @@ let filter_float l =
 let filter_number l =
   filter_map (
     function
-#ifdef INT
         `Int x -> Some (float x)
-#endif
 #ifdef FLOAT
       | `Float x -> Some x
 #endif

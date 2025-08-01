@@ -70,9 +70,7 @@ let rec format ~inside_box (out : Format.formatter) (x : t) : unit =
   match x with
     | `Null -> Format.pp_print_string out "null"
     | `Bool x -> Format.pp_print_bool out x
-#ifdef INT
     | `Int x -> Format.pp_print_string out (json_string_of_int x)
-#endif
 #ifdef FLOAT
     | `Float x ->
         Format.pp_print_string out (json_string_of_float x)

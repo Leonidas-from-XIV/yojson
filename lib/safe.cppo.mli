@@ -8,7 +8,6 @@
    JSON.
 *)
 
-#define INT
 #define INTLIT
 #define FLOAT
 #define STRING
@@ -30,7 +29,6 @@ module Util : sig
   #include "util.mli"
 end
 
-#undef INT
 #undef INTLIT
 #undef FLOAT
 #undef STRING

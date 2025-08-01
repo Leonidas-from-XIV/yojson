@@ -117,9 +117,7 @@ val sort : t -> t
 
 val write_null : Buffer.t -> unit -> unit
 val write_bool : Buffer.t -> bool -> unit
-#ifdef INT
 val write_int : Buffer.t -> int -> unit
-#endif
 #ifdef FLOAT
 val write_float : Buffer.t -> float -> unit
 val write_std_float : Buffer.t -> float -> unit

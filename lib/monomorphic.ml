@@ -5,12 +5,10 @@ let rec pp fmt =
     Format.fprintf fmt "`Bool (@[<hov>";
     Format.fprintf fmt "%B" x;
     Format.fprintf fmt "@])"
-#ifdef INT
   | `Int x ->
     Format.fprintf fmt "`Int (@[<hov>";
     Format.fprintf fmt "%d" x;
     Format.fprintf fmt "@])"
-#endif
 #ifdef INTLIT
   | `Intlit x ->
     Format.fprintf fmt "`Intlit (@[<hov>";
@@ -63,9 +61,7 @@ let rec equal a b =
   match a, b with
   | `Null, `Null -> true
   | `Bool a, `Bool b -> a = b
-#ifdef INT
   | `Int a, `Int b -> a = b
-#endif
 #ifdef INTLIT
     | `Intlit a, `Intlit b -> a = b
 #endif

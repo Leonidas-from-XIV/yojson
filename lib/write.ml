@@ -212,9 +212,7 @@ let rec write_json ob (x : t) =
   match x with
       `Null -> write_null ob ()
     | `Bool b -> write_bool ob b
-#ifdef INT
     | `Int i -> write_int ob i
-#endif
 #ifdef INTLIT
     | `Intlit s -> Buffer.add_string ob s
 #endif

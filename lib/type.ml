@@ -4,9 +4,7 @@ type t =
     [
     | `Null
     | `Bool of bool
-#ifdef INT
     | `Int of int
-#endif
 #ifdef INTLIT
     | `Intlit of string
 #endif
