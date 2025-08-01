@@ -6,7 +6,6 @@
    The main advantage of this module is its simplicity.
 *)
 
-#define FLOAT
 #define STRING
 
 #include "type.ml"
@@ -24,5 +23,4 @@ module Util : sig
   #include "util.mli"
 end
 
-#undef FLOAT
 #undef STRING

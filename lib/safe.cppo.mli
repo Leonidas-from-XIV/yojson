@@ -9,7 +9,6 @@
 *)
 
 #define INTLIT
-#define FLOAT
 #define STRING
 
 #include "type.ml"
@@ -30,5 +29,4 @@ module Util : sig
 end
 
 #undef INTLIT
-#undef FLOAT
 #undef STRING

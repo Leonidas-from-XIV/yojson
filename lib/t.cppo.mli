@@ -1,5 +1,4 @@
 #define INTLIT
-#define FLOAT
 #define STRING
 
 #include "type.ml"
@@ -11,5 +10,4 @@
 #include "write2.mli"
 
 #undef INTLIT
-#undef FLOAT
 #undef STRING

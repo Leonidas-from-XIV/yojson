@@ -1,4 +1,3 @@
-#define FLOAT
 #define STRING
 
 #include "type.ml"
@@ -19,5 +18,4 @@ module Util = struct
   #include "util.ml"
 end
 
-#undef FLOAT
 #undef STRING

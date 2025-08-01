@@ -8,9 +8,7 @@ type t =
 #ifdef INTLIT
     | `Intlit of string
 #endif
-#ifdef FLOAT
     | `Float of float
-#endif
 #ifdef STRING
     | `String of string
 #endif

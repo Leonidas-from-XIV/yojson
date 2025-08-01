@@ -59,29 +59,21 @@ let to_bool_option = function
 
 let to_number = function
   | `Int i -> float i
-#ifdef FLOAT
   | `Float f -> f
-#endif
   | js -> typerr "Expected number, got " js
 
 let to_number_option = function
   | `Int i -> Some (float i)
-#ifdef FLOAT
   | `Float f -> Some f
-#endif
   | `Null -> None
   | js -> typerr "Expected number or null, got " js
 
 let to_float = function
-#ifdef FLOAT
   | `Float f -> f
-#endif
   | js -> typerr "Expected float, got " js
 
 let to_float_option = function
-#ifdef FLOAT
   | `Float f -> Some f
-#endif
   | `Null -> None
   | js -> typerr "Expected float or null, got " js
 
@@ -155,23 +147,15 @@ let filter_int l =
     | _ -> None) l
 
 let filter_float l =
-  filter_map (
-    function
-#ifdef FLOAT
-      `Float x -> Some x
-#endif
-      | _ -> None
-  ) l
+  filter_map (function
+    | `Float x -> Some x
+    | _ -> None) l
 
 let filter_number l =
-  filter_map (
-    function
-        `Int x -> Some (float x)
-#ifdef FLOAT
-      | `Float x -> Some x
-#endif
-      | _ -> None
-  ) l
+  filter_map (function
+    | `Int x -> Some (float x)
+    | `Float x -> Some x
+    | _ -> None) l
 
 let filter_string l =
   filter_map (

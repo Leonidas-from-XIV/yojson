@@ -71,10 +71,8 @@ let rec format ~inside_box (out : Format.formatter) (x : t) : unit =
     | `Null -> Format.pp_print_string out "null"
     | `Bool x -> Format.pp_print_bool out x
     | `Int x -> Format.pp_print_string out (json_string_of_int x)
-#ifdef FLOAT
     | `Float x ->
         Format.pp_print_string out (json_string_of_float x)
-#endif
 #ifdef STRING
     | `String s -> Format.pp_print_string out (json_string_of_string s)
 #endif

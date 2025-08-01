@@ -1,5 +1,4 @@
 #define INTLIT
-#define FLOAT
 #define STRING
 
 #include "type.ml"
@@ -23,5 +22,4 @@ module Util = struct
 end
 
 #undef INTLIT
-#undef FLOAT
 #undef STRING

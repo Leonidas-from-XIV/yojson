@@ -15,12 +15,10 @@ let rec pp fmt =
     Format.fprintf fmt "%S" x;
     Format.fprintf fmt "@])"
 #endif
-#ifdef FLOAT
   | `Float x ->
     Format.fprintf fmt "`Float (@[<hov>";
     Format.fprintf fmt "%F" x;
     Format.fprintf fmt "@])"
-#endif
 #ifdef STRING
   | `String x ->
     Format.fprintf fmt "`String (@[<hov>";
@@ -65,9 +63,7 @@ let rec equal a b =
 #ifdef INTLIT
     | `Intlit a, `Intlit b -> a = b
 #endif
-#ifdef FLOAT
     | `Float a, `Float b -> a = b
-#endif
 #ifdef STRING
     | `String a, `String b -> a = b
 #endif
