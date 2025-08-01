@@ -221,14 +221,8 @@ let rec write_json ob (x : t) =
 #ifdef FLOAT
     | `Float f -> write_float ob f
 #endif
-#ifdef FLOATLIT
-    | `Floatlit s -> Buffer.add_string ob s
-#endif
 #ifdef STRING
     | `String s -> write_string ob s
-#endif
-#ifdef STRINGLIT
-    | `Stringlit s -> Buffer.add_string ob s
 #endif
     | `Assoc l -> write_assoc ob l
     | `List l -> write_list ob l

@@ -23,21 +23,9 @@ let rec pp fmt =
     Format.fprintf fmt "%F" x;
     Format.fprintf fmt "@])"
 #endif
-#ifdef FLOATLIT
-  | `Floatlit x ->
-    Format.fprintf fmt "`Floatlit (@[<hov>";
-    Format.fprintf fmt "%S" x;
-    Format.fprintf fmt "@])"
-#endif
 #ifdef STRING
   | `String x ->
     Format.fprintf fmt "`String (@[<hov>";
-    Format.fprintf fmt "%S" x;
-    Format.fprintf fmt "@])"
-#endif
-#ifdef STRINGLIT
-  | `Stringlit x ->
-    Format.fprintf fmt "`Stringlit (@[<hov>";
     Format.fprintf fmt "%S" x;
     Format.fprintf fmt "@])"
 #endif
@@ -84,14 +72,8 @@ let rec equal a b =
 #ifdef FLOAT
     | `Float a, `Float b -> a = b
 #endif
-#ifdef FLOATLIT
-    | `Floatlit a, `Floatlit b -> a = b
-#endif
 #ifdef STRING
     | `String a, `String b -> a = b
-#endif
-#ifdef STRINGLIT
-    | `Stringlit a, `Stringlit b -> a = b
 #endif
     | `Assoc xs, `Assoc ys ->
       let compare_keys = fun (key, _) (key', _) -> String.compare key key' in

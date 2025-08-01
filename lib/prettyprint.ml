@@ -83,12 +83,6 @@ let rec format ~inside_box (out : Format.formatter) (x : t) : unit =
 #ifdef INTLIT
     | `Intlit s -> Format.pp_print_string out s
 #endif
-#ifdef FLOATLIT
-    | `Floatlit s -> Format.pp_print_string out s
-#endif
-#ifdef STRINGLIT
-    | `Stringlit s -> Format.pp_print_string out s
-#endif
     | `List [] -> Format.pp_print_string out "[]"
     | `List l ->
       if not inside_box then Format.fprintf out "@[<hv2>";

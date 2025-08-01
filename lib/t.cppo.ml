@@ -1,9 +1,7 @@
 #define INT
 #define INTLIT
 #define FLOAT
-#define FLOATLIT
 #define STRING
-#define STRINGLIT
 
 #include "type.ml"
 
@@ -20,6 +18,4 @@ end
 #undef INT
 #undef INTLIT
 #undef FLOAT
-#undef FLOATLIT
 #undef STRING
-#undef STRINGLIT

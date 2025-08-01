@@ -133,12 +133,6 @@ val write_string : Buffer.t -> string -> unit
 #ifdef INTLIT
 val write_intlit : Buffer.t -> string -> unit
 #endif
-#ifdef FLOATLIT
-val write_floatlit : Buffer.t -> string -> unit
-#endif
-#ifdef STRINGLIT
-val write_stringlit : Buffer.t -> string -> unit
-#endif
 
 val write_assoc : Buffer.t -> (string * t) list -> unit
 val write_list : Buffer.t -> t list -> unit

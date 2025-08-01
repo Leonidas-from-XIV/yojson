@@ -13,14 +13,8 @@ type t =
 #ifdef FLOAT
     | `Float of float
 #endif
-#ifdef FLOATLIT
-    | `Floatlit of string
-#endif
 #ifdef STRING
     | `String of string
-#endif
-#ifdef STRINGLIT
-    | `Stringlit of string
 #endif
     | `Assoc of (string * t) list
     | `List of t list

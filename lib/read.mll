@@ -169,45 +169,15 @@ rule read_json v = parse
   | "true"      { `Bool true }
   | "false"     { `Bool false }
   | "null"      { `Null }
-  | "NaN"       {
-                  #ifdef FLOAT
-                    `Float nan
-                  #elif defined FLOATLIT
-                    `Floatlit "NaN"
-                  #endif
-                }
-  | "Infinity"  {
-                  #ifdef FLOAT
-                    `Float infinity
-                  #elif defined FLOATLIT
-                    `Floatlit "Infinity"
-                  #endif
-                }
-  | "-Infinity" {
-                  #ifdef FLOAT
-                    `Float neg_infinity
-                  #elif defined FLOATLIT
-                    `Floatlit "-Infinity"
-                  #endif
-                }
-  | '"'         {
-                  #ifdef STRING
-                    Buffer.clear v.buf;
-                    `String (finish_string v lexbuf)
-                  #elif defined STRINGLIT
-                    `Stringlit (finish_stringlit v lexbuf)
-                  #endif
+  | "NaN"       { `Float nan }
+  | "Infinity"  { `Float infinity }
+  | "-Infinity" { `Float neg_infinity }
+  | '"'         { Buffer.clear v.buf;
+                  `String (finish_string v lexbuf)
                 }
   | positive_int         { make_positive_int v lexbuf }
   | '-' positive_int     { make_negative_int v lexbuf }
-  | float       {
-                  #ifdef FLOAT
-                    `Float (float_of_string (Lexing.lexeme lexbuf))
-                  #elif defined FLOATLIT
-                    `Floatlit (Lexing.lexeme lexbuf)
-                  #endif
-                 }
-
+  | float       { `Float (float_of_string (Lexing.lexeme lexbuf)) }
   | '{'          { let acc = ref [] in
                    try
                      read_space v lexbuf;

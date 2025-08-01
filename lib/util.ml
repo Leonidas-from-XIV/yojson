@@ -11,10 +11,6 @@ let typeof = function
   | `Null -> "null"
   | `String _ -> "string"
   | `Intlit _ -> "intlit"
-  | `Floatlit _ -> "floatlit"
-#ifdef STRINGLIT
-  | `Stringlit _ -> "stringlit"
-#endif
 
 let typerr msg js = raise (Type_error (msg ^ typeof js, js))
 
