@@ -9,7 +9,6 @@
 *)
 
 #define INTLIT
-#define STRING
 
 #include "type.ml"
 
@@ -29,4 +28,3 @@ module Util : sig
 end
 
 #undef INTLIT
-#undef STRING

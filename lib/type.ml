@@ -9,9 +9,7 @@ type t =
     | `Intlit of string
 #endif
     | `Float of float
-#ifdef STRING
     | `String of string
-#endif
     | `Assoc of (string * t) list
     | `List of t list
     ]

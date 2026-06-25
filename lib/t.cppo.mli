@@ -1,5 +1,4 @@
 #define INTLIT
-#define STRING
 
 #include "type.ml"
 
@@ -10,4 +9,3 @@
 #include "write2.mli"
 
 #undef INTLIT
-#undef STRING

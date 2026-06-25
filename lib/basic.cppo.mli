@@ -6,8 +6,6 @@
    The main advantage of this module is its simplicity.
 *)
 
-#define STRING
-
 #include "type.ml"
 
 #include "write.mli"
@@ -22,5 +20,3 @@
 module Util : sig
   #include "util.mli"
 end
-
-#undef STRING

@@ -217,9 +217,7 @@ let rec write_json ob (x : t) =
     | `Intlit s -> Buffer.add_string ob s
 #endif
     | `Float f -> write_float ob f
-#ifdef STRING
     | `String s -> write_string ob s
-#endif
     | `Assoc l -> write_assoc ob l
     | `List l -> write_list ob l
 

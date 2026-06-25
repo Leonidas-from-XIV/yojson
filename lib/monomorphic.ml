@@ -19,12 +19,10 @@ let rec pp fmt =
     Format.fprintf fmt "`Float (@[<hov>";
     Format.fprintf fmt "%F" x;
     Format.fprintf fmt "@])"
-#ifdef STRING
   | `String x ->
     Format.fprintf fmt "`String (@[<hov>";
     Format.fprintf fmt "%S" x;
     Format.fprintf fmt "@])"
-#endif
   | `Assoc xs ->
     Format.fprintf fmt "`Assoc (@[<hov>";
     Format.fprintf fmt "@[<2>[";
@@ -64,9 +62,7 @@ let rec equal a b =
     | `Intlit a, `Intlit b -> a = b
 #endif
     | `Float a, `Float b -> a = b
-#ifdef STRING
     | `String a, `String b -> a = b
-#endif
     | `Assoc xs, `Assoc ys ->
       let compare_keys = fun (key, _) (key', _) -> String.compare key key' in
       let xs = List.stable_sort compare_keys xs in

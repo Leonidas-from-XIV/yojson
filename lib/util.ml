@@ -89,15 +89,11 @@ let to_int_option = function
 let to_list = function `List l -> l | js -> typerr "Expected array, got " js
 
 let to_string = function
-#ifdef STRING
   | `String s -> s
-#endif
   | js -> typerr "Expected string, got " js
 
 let to_string_option = function
-#ifdef STRING
   | `String s -> Some s
-#endif
   | `Null -> None
   | js -> typerr "Expected string or null, got " js
 
@@ -158,13 +154,9 @@ let filter_number l =
     | _ -> None) l
 
 let filter_string l =
-  filter_map (
-    function
-#ifdef STRING
-        `String x -> Some x
-#endif
-      | _ -> None
-  ) l
+  filter_map (function
+    | `String x -> Some x
+    | _ -> None) l
 
 let keys o =
   to_assoc o |> List.map (fun (key, _) -> key)

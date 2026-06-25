@@ -122,9 +122,7 @@ val write_float : Buffer.t -> float -> unit
 val write_std_float : Buffer.t -> float -> unit
 val write_float_prec : int -> Buffer.t -> float -> unit
 val write_std_float_prec : int -> Buffer.t -> float -> unit
-#ifdef STRING
 val write_string : Buffer.t -> string -> unit
-#endif
 
 #ifdef INTLIT
 val write_intlit : Buffer.t -> string -> unit
