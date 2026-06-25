@@ -10,6 +10,9 @@
 
 ### Removed
 
+- `Yojson.Raw` was removed to cut down on parser variants; users are encouraged
+  to use `Yosjon.Safe`. (#206, @Leonidas-from-XIV)
+
 ### Security
 
 ## 3.0.0
